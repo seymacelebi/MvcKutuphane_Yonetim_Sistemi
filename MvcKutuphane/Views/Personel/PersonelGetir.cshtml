@@ -1,0 +1,23 @@
+﻿@model MvcKutuphane.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.ID)
+        @Html.TextBoxFor(p => p.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k => k.AD)*@
+        @*bunun yerine label da yazarız ama böylece veritabanından çekmiş olduk*@
+       <label>Personel Adı</label>
+        @Html.TextBoxFor(p =>p.PERSONEL, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-primary">GÜNCELLE</button>
+    </div>
+}
+
